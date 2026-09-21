@@ -20,7 +20,7 @@ function inspectPackageManifest() {
 
     // Check if package.json exists in current folder
     if (!fs.existsSync(packageJsonPath)) {
-        console.log('⚠️  No package.json found. Creating a default manifest...');
+        console.log('  No package.json found. Creating a default manifest...');
         
         const defaultManifest = {
             name: "npm-demo-app",
@@ -35,7 +35,7 @@ function inspectPackageManifest() {
         };
 
         fs.writeFileSync(packageJsonPath, JSON.stringify(defaultManifest, null, 2), 'utf-8');
-        console.log('✅ Created package.json successfully.\n');
+        console.log(' Created package.json successfully.\n');
     }
 
     // Read and parse package.json
@@ -43,10 +43,10 @@ function inspectPackageManifest() {
         const rawData = fs.readFileSync(packageJsonPath, 'utf-8');
         const manifest = JSON.parse(rawData);
 
-        console.log(`📦 Project Name        : ${manifest.name || 'N/A'}`);
-        console.log(`🏷️  Version             : ${manifest.version || 'N/A'}`);
-        console.log(`🚀 Entry Point (main)  : ${manifest.main || 'N/A'}`);
-        console.log(`📝 Description         : ${manifest.description || 'N/A'}`);
+        console.log(` Project Name        : ${manifest.name || 'N/A'}`);
+        console.log(`  Version             : ${manifest.version || 'N/A'}`);
+        console.log(` Entry Point (main)  : ${manifest.main || 'N/A'}`);
+        console.log(` Description         : ${manifest.description || 'N/A'}`);
         
         console.log('\n--- Defined Dependencies ---');
         console.log('Production (dependencies)   :', manifest.dependencies ? Object.keys(manifest.dependencies) : 'None');
@@ -54,7 +54,7 @@ function inspectPackageManifest() {
         console.log('\n');
 
     } catch (error) {
-        console.error('❌ Error parsing package.json:', error.message);
+        console.error(' Error parsing package.json:', error.message);
     }
 }
 
@@ -75,7 +75,7 @@ async function fetchExternalData() {
         const response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
         const user = response.data;
 
-        console.log('✅ Response Received Successfully:');
+        console.log(' Response Received Successfully:');
         console.log(`• ID      : ${user.id}`);
         console.log(`• Name    : ${user.name}`);
         console.log(`• Email   : ${user.email}`);
@@ -84,12 +84,12 @@ async function fetchExternalData() {
 
     } catch (error) {
         if (error.code === 'MODULE_NOT_FOUND') {
-            console.log('❌ Package "axios" is not installed in this environment!');
-            console.log('\n💡 To resolve this error and make this part of the script work:');
+            console.log(' Package "axios" is not installed in this environment!');
+            console.log('\n To resolve this error and make this part of the script work:');
             console.log('1. Run: npm install axios');
             console.log('2. Re-run: node npm.js\n');
         } else {
-            console.error('❌ HTTP Request failed:', error.message);
+            console.error(' HTTP Request failed:', error.message);
         }
     }
 }
