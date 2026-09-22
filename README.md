@@ -1,4 +1,6 @@
-STUDENT NAME:M.SIVA GANESH
-ROLL NO:A24126552093
-BRANCH:CSM
-ACADEMIC YEAR:2026-2027
+
+
+* **Student Name:** M SIVA GANESH
+* **Roll Number:** A24126552093
+* **Department:** Computer Science & Engineering (AI & ML)
+* **Academic Year:** 2024–2025
