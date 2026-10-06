@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Demonstration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            background-color: white;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        #message {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: lightblue;
+            font-size: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>DOM Demonstration</h1>
+
+        <p id="message">This is the original content.</p>
+
+        <button onclick="changeContent()">
+            Change Content
+        </button>
+
+        <button onclick="changeStyle()">
+            Change Style
+        </button>
+
+        <button onclick="changeAttribute()">
+            Change Attribute
+        </button>
+
+        <button onclick="resetPage()">
+            Reset
+        </button>
+
+    </div>
+
+    <script>
+
+        // Get HTML element using DOM
+        const message = document.getElementById("message");
+
+        // Change content
+        function changeContent() {
+            message.textContent =
+                "The content has been changed using JavaScript!";
+        }
+
+        // Change CSS style
+        function changeStyle() {
+            message.style.backgroundColor = "lightgreen";
+            message.style.color = "darkgreen";
+            message.style.fontSize = "25px";
+            message.style.fontWeight = "bold";
+        }
+
+        // Change HTML attribute
+        function changeAttribute() {
+            message.setAttribute("title",
+                "This is a dynamically added title attribute");
+
+            alert("Title attribute has been added to the paragraph.");
+        }
+
+        // Reset changes
+        function resetPage() {
+            message.textContent = "This is the original content.";
+
+            message.style.backgroundColor = "lightblue";
+            message.style.color = "black";
+            message.style.fontSize = "20px";
+            message.style.fontWeight = "normal";
+
+            message.removeAttribute("title");
+        }
+
+    </script>
+
+</body>
+</html>
