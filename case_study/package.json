@@ -1,0 +1,14 @@
+{
+  "name": "student-records",
+  "version": "1.0.0",
+  "description": "Student Records API - MongoDB Community Edition",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0"
+  }
+}
